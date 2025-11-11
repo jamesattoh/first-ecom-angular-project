@@ -1,0 +1,7 @@
+<div class="home">
+
+  @for (product of products; track product.id) {
+    <app-card-product [product]="product" (addProduct)="getProduct($event)"/>  <!-- on y colle le nom du signal créé | En angular, pour tout ce qui est propriété et attribut, ce sont des crochets [], et tout ce qui est évènement c'est ()-->
+    <!--le seul moyen de recuperer un output est $event-->
+  }
+</div>

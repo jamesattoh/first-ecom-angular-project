@@ -1,0 +1,7 @@
+<div class="cart-product">
+
+  <p>{{ product()?.name }}</p> <!--  '?' => le safe operator-->
+  <p>{{ product()?.price }}€</p> <!--  la () dans product() est propre au signaux -->
+  <button (click)="onAddToCard(product())">Ajouter au panier</button>
+
+</div>
