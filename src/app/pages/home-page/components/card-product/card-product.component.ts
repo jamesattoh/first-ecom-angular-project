@@ -8,6 +8,8 @@ import {ProductType} from '../../../../shared/types/product.type';
   styleUrl: './card-product.component.scss'
 })
 export class CardProductComponent {
+  // parent => fils : input | fils => parent : output
+
   readonly product = input<ProductType>(); //je dis au card-product qu'il va contenir des infos provenant d'ailleurs, readonly pour les input/output
 
   readonly addProduct = output<ProductType | undefined>(); //indiquer au parent (homepage) du clic sur un produit card-product
