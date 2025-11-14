@@ -1,3 +1,11 @@
+nav {
+  display: flex;
+  justify-content: end;
+  border-bottom: 2px solid darkgray;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
 .home {
   display: flex;
   justify-content: center;

@@ -1,3 +1,7 @@
+<nav>
+  <button (click)="goToCartPage()">VOIR LE PANIER ({{ cartProducts.length }})</button>
+</nav>
+
 <div class="home">
 
   @for (product of products; track product.id) {

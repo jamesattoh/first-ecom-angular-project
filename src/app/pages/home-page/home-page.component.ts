@@ -1,6 +1,7 @@
-import {Component, output} from '@angular/core';
+import {Component, inject, output} from '@angular/core';
 import {CardProductComponent} from './components/card-product/card-product.component';
 import {ProductType} from '../../shared/types/product.type';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -47,11 +48,17 @@ export class HomePageComponent {
     // créons un nouveau tableau qui contiendra les produits du panier
     public cartProducts : ProductType[] = []; // je dois necessairement indiquer le type de mon objet
 
-    readonly totalProducts = output<number>();
+    //readonly totalProducts = output<number>();
+
+    private readonly router = inject(Router);
 
     public getProduct(product: ProductType | undefined): void {
-      //console.log('product', product);
       this.cartProducts.push(product as ProductType); // utilisation de l'alias
-      this.totalProducts.emit(this.cartProducts.length); // recuperer la taille du tableau
+      //this.totalProducts.emit(this.cartProducts.length); // recuperer la taille du tableau
+    }
+
+    public goToCartPage(): void{
+      //this.showingCartPage = true;
+      this.router.navigate(['/cart']);
     }
 }
