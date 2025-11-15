@@ -48,17 +48,18 @@ export class HomePageComponent {
     // créons un nouveau tableau qui contiendra les produits du panier
     public cartProducts : ProductType[] = []; // je dois necessairement indiquer le type de mon objet
 
-    //readonly totalProducts = output<number>();
-
     private readonly router = inject(Router);
 
     public getProduct(product: ProductType | undefined): void {
       this.cartProducts.push(product as ProductType); // utilisation de l'alias
-      //this.totalProducts.emit(this.cartProducts.length); // recuperer la taille du tableau
+      console.log("cartProducts", this.cartProducts);
     }
 
     public goToCartPage(): void{
-      //this.showingCartPage = true;
-      this.router.navigate(['/cart']);
+      this.router.navigate(['/cart'], {
+        queryParams: {
+          products: JSON.stringify(this.cartProducts)
+        }
+      });
     }
 }

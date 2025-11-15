@@ -1,1 +1,5 @@
-<p>cart-page works!</p>
+@for (product of cartProducts; track product.id) {
+  <div>
+    {{product.name}} - {{product.price}}€
+  </div>
+}
