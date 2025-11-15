@@ -1,5 +1,5 @@
-@for (product of cartProducts; track product.id) {
+@for (product of CartProductsWithQuantity; track product.product.id) {
   <div>
-    {{product.name}} - {{product.price}}€
+    Product : {{product.product.name}} - {{product.product.price}}€ - {{ product.quantity}}
   </div>
 }
